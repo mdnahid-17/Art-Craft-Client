@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui" {
+   themes: all;
+ }
+
+.is-invalid {
+    border-color: red;
+ 
+ }
+ 
+ .error{
+     display: none;
+     font-size: x-large;
+     color: red;
+     position: absolute;
+     right: 10px;
+     top: 45%;
+     transform: translateY(-50%);
+ }
+ .error-icon{
+     display: block;
+ }
