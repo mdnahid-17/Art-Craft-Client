@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import classNames from "classnames";
 import { MdErrorOutline } from "react-icons/md";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
@@ -13,7 +13,7 @@ export default function Login() {
   const { loginUser, loader, googleLogin, githubLogin } = UseAuth();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  // const location = useLocation();
+  const location = useLocation();
 
   const {
     register,
@@ -109,7 +109,7 @@ export default function Login() {
         icon: "success",
         confirmButtonText: "ok!",
       });
-      // navigate(location?.state, { replace: true });
+      navigate(location?.state, { replace: true });
     } catch (err) {
       console.log(err);
       Swal.fire({
